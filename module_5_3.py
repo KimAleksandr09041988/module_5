@@ -12,38 +12,26 @@ class House:
     def __eq__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __lt__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __le__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors <= other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __gt__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors > other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __ge__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __ne__(self, other: object):
         if isinstance(other, House):
             return self.number_of_floors != other.number_of_floors
-        else:
-            print('Не является типом House')
 
     def __add__(self, value):
         if isinstance(value, int):
@@ -53,18 +41,10 @@ class House:
             print(f'{value} не является int')
 
     def __radd__(self, value):
-        if isinstance(value, int):
-            self.number_of_floors += value
-            return self
-        else:
-            print(f'{value} не является int')
+        return self.__add__(value)
 
     def __iadd__(self, value):
-        if isinstance(value, int):
-            self.number_of_floors += value
-            return self
-        else:
-            print(f'{value} не является int')
+        return self.__add__(value)
 
 
     def go_to(self, new_floor):
