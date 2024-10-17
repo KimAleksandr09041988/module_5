@@ -24,8 +24,6 @@ class UrTube():
             if user.get('nickname') == nickname:
                 if user.get('password') == hash(password):
                     self.current_user = nickname
-                else:
-                    print('Введен несуществующий логин или неверный пароль', 3)
 
     def register(self, nickname, password, age):
         user = User(nickname, password, age)
