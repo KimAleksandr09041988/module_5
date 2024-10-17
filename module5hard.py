@@ -13,8 +13,12 @@ class User:
         self.password = hash(password)
         self.age = age
 
-class UrTube():
-    def __init__(self, users = [], videos = [], current_user = None):
+class UrTube:
+    def __init__(self, users=None, videos=None, current_user = None):
+        if videos is None:
+            videos = []
+        if users is None:
+            users = []
         self.users = users
         self.videos = videos
         self.current_user = current_user
@@ -73,7 +77,7 @@ class UrTube():
         return list_
 
     def watch_video(self, str_):
-        if self.current_user == None:
+        if self.current_user is None:
             print('Войдите в аккаунт, чтобы смотреть видео')
         else:
             if len(self.videos) > 0:
